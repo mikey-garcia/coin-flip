@@ -10,7 +10,7 @@
 
     <title>coin flip but it works</title>
 
-    <link href="css/style.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
 
   </head>
 
@@ -70,16 +70,12 @@
       <h1>i promise u this isnt rigged</h1>
     
       <div id="coin">
-        <div class="side head">
-          <div class="col-md-5 image-cropper">
+        <div class="side head image-cropper">
               <img class="pic" src="./img/heads.png"></img>
-          </div>
         </div>
 
-        <div class="side tail">
-          <div class="col-md-5 image-cropper">
+        <div class="side tail image-cropper">
               <img class="pic" src="./img/tails.png"></img>
-          </div>
         </div>
       </div>
       <script>
@@ -89,6 +85,7 @@
     
         function fnClick() {
           var flipResult = Math.random();
+          console.log(flipResult);
           if (flipResult < 0.5) {
             coin.className = "flipHead";
           } else {
