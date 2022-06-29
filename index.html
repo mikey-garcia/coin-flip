@@ -48,6 +48,21 @@
         .flipTail {
           animation: resultTail 2s ease-out forwards;
         }
+
+        .image-cropper {
+          width: 200px;
+          height: 200px;
+          position: relative;
+          overflow: hidden;
+          border-radius: 50%;
+        }
+        .pic {
+          display: inline;
+          margin: 0 auto;
+          margin-left: -10%;
+          height: auto;
+          width: 120%;
+        }
     
         @keyframes resultHead {
           from {
@@ -85,6 +100,7 @@
     
         function fnClick() {
           var flipResult = Math.random();
+          console.log("hello");
           console.log(flipResult);
           if (flipResult < 0.5) {
             coin.className = "flipHead";
