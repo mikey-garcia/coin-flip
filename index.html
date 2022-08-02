@@ -7,106 +7,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
     <title>coin flip but it works</title>
 
+    <!--
+
+        Matt, I know you're looking at the source code to see if
+        it's legit, u untrusting fuck
+
+    -->
   </head>
 
   <body>
-      <style>
-
-        :root{
-          --angle: 0deg;
-        }
-
-        h1 {
-          text-align: center;
-        }
-        #coin {
-          position: relative;
-          margin: 0 auto;
-          width: 100px;
-          height: 100px;
-          cursor: pointer;
-          transition: transform 1s ease-in;
-          -webkit-transform-style: preserve-3d;
-        }
-        .side {
-          width: 100%;
-          height: 100%;
-          border-radius: 50%;
-          position: absolute;
-          backface-visibility: hidden;
-        }
-        .head {
-          z-index: 10;
-        }
-        .tail {
-          transform: rotateX(-180deg);
-        }
-    
-        .image-cropper {
-          width: 200px;
-          height: 200px;
-          position: relative;
-          overflow: hidden;
-          border-radius: 50%;
-        }
-    
-        @-webkit-keyframes resultHead {
-          from { -webkit-transform: rotateX(0); -moz-transform: rotateX(0); transform: rotateX(0); }
-          to { -webkit-transform: rotateX(1800deg); -moz-transform: rotateX(1800deg); transform: rotateX(1800deg); }
-        }
-
-        @-webkit-keyframes resultTail {
-          from { -webkit-transform: rotateX(0); -moz-transform: rotateX(0); transform: rotateX(0); }
-          to { -webkit-transform: rotateX(1980deg); -moz-transform: rotateX(1980deg); transform: rotateX(1980deg); }
-        }
-
-        .headFlip{
-          -webkit-animation: resultHead 3s ease-out forwards;
-          -moz-animation: resultHead 3s ease-out forwards;
-          -o-animation: resultHead 3s ease-out forwards;
-          animation: resultHead 3s ease-out forwards;
-        }
-        .tailFlip {
-          -webkit-animation: resultTail 3s ease-out forwards;
-          -moz-animation: resultTail 3s ease-out forwards;
-          -o-animation: resultTail 3s ease-out forwards;
-          animation: resultTail 3s ease-out forwards;
-        }
-
-      </style>
-      <h1>i promise u this isnt rigged</h1>
-    
-      <div id="coin">
-        <div class="side head">
-              <img class="image-cropper" src="./img/heads.png"></img>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h1>i shpromise u this isnt rigged</h1>
         </div>
+      </div>  
+    </div>
 
-        <div class="side tail">
-            <img class="image-cropper" src="./img/tails.png"></img>
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-12">
+          <div id="coin">
+            <div class="side head">
+                  <img class="image-cropper" src="./img/heads.png"></img>
+            </div>
+      
+            <div class="side tail">
+                <img class="image-cropper" src="./img/tails.png"></img>
+            </div>
+          </div>    
         </div>
       </div>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-      <script>
-        jQuery(document).ready(function($){
+      <div class="row">
+        <div id="path-area" class="col-12 text-center">
+          <img id="path-img" class="img-fluid path-img" src="./img/path.png"></img>
+          <img id="lilf" class="img-fluid chatter-img" src="./img/chatter.png"></img>
+        </div>
+      </div>
 
-          $('#coin').on('click', function(){
-            var flipResult = Math.random();
-            $('#coin').removeClass();
-            setTimeout(function(){
-              if(flipResult <= 0.5){
-                $('#coin').addClass('headFlip');
-              }
-              else{
-                $('#coin').addClass('tailFlip');
-              }
-            }, 100);
-          });
-        });
-      </script>
+      <div class="row">
+        <div class="col-12 text-center">
+          <button id="lose" class="btn btn-danger"><img class="btn-img" src="./img/PepePissHands.png"></img>
+          </button>
+          <button id="continue" class="btn btn-success""><img class="btn-img" src="./img/POGGIES.png"></img>
+          </button>
+        </div>
+      </div>
+      <!--
+      <div class="row">
+        <div class="col-12">
+          <div class="input-group text-center" style="margin-left: 45%; padding-top: 50px;">
+            <input id="chatter-input" type="text" class="form-control" placeholder="chatter" aria-label="chatter" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" value="enter" type="submit" onclick="getSubmission();">enter</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-</body>
+      -->
+
+    </div>
+
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>
+
 </html>
