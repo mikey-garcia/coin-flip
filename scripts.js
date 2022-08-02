@@ -89,6 +89,7 @@ jQuery(document).ready(function($){
 
     $('#continue').on('click', function(){
         if (CURR_STAGE == 6){
+            move_forward(CURR_STAGE);
             alert("POGGIES")
             return;
         }
