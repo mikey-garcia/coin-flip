@@ -73,7 +73,7 @@
   }
 
   #lilf{
-    left:10vw;
+    left:20vw;
   }
 
   @-webkit-keyframes resultHead {
@@ -98,12 +98,3 @@
     -o-animation: resultTail 3s ease-out forwards;
     animation: resultTail 3s ease-out forwards;
   }
-
-  .moveRight{
-    animation: move-forwards 3s;
-  }
-  @-webkit-keyframes move-forwards {
-    50% {left: 100px;}
-  }
-
-
